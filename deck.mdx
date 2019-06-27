@@ -4,25 +4,27 @@ import { nightOwl as hooksTheme } from "code-surfer/themes";
 import GreetingLoader from "./src/greeting-loader";
 import { Image } from "mdx-deck";
 
-This is a copy of [Dan's hooks demo](https://youtu.be/dpw9EHDh2bM?t=1051) from React Conf
+---
 
-I built it to test [Code Surfer v2](https://github.com/pomber/code-surfer/pull/58)
+Gebaseerd op Dan Abramov's hooks [demo](https://youtu.be/dpw9EHDh2bM?t=1051) from React Conf 2018
+
+& Rodrigo Pombo(@pomber)'s [Code-surfer](https://github.com/pomber/code-surfer/pull/58)
 
 ---
 
-# Demo
+# React Hooks
 
 ---
 
 <CodeSurferColumnLayout sizes={[1, 2]}>
-  <Step subtitle="Here is a simple React component">
+  <Step subtitle="Hier is een simple React component">
     <GreetingLoader />
     <Code
       code={require("!!raw-loader!./src/greeting.1.1.js").default}
       lang="jsx"
     />
   </Step>
-  <Step subtitle="we want to make the 'name' editable">
+  <Step subtitle="we willen de 'name' bewerkbaar maken">
     <GreetingLoader />
     <Code
       code={require("!!raw-loader!./src/greeting.1.1.js").default}
@@ -30,21 +32,21 @@ I built it to test [Code Surfer v2](https://github.com/pomber/code-surfer/pull/5
       focus="7"
     />
   </Step>
-  <Step subtitle="so we turn the component into a class">
+  <Step subtitle="Dus we veranderen het component in een class">
     <GreetingLoader version="class.1.1" />
     <Code
       code={require("!!raw-loader!./src/greeting.class.1.1.js").default}
       lang="jsx"
     />
   </Step>
-  <Step subtitle="add some state">
+  <Step subtitle="voeg een state toe">
     <GreetingLoader version="class.1.2" />
     <Code
       code={require("!!raw-loader!./src/greeting.class.1.2.js").default}
       lang="jsx"
     />
   </Step>
-  <Step subtitle="and add a change handler that calls setState">
+  <Step subtitle="en voeg een change handler toe die setState heet">
     <GreetingLoader version="class.1.3" />
     <Code
       code={require("!!raw-loader!./src/greeting.class.1.3.js").default}
@@ -52,7 +54,7 @@ I built it to test [Code Surfer v2](https://github.com/pomber/code-surfer/pull/5
       focus="10:12,15:17,25"
     />
   </Step>
-  <Step subtitle="we can now edit the name and it should work">
+  <Step subtitle="we kunnen nu de name editen en dat zou moeten werken">
     <GreetingLoader version="class.1.3" />
     <Code
       code={require("!!raw-loader!./src/greeting.class.1.3.js").default}
@@ -69,14 +71,14 @@ But let's take a step back
 ---
 
 <CodeSurferColumnLayout sizes={[1, 2]} themes={[null, hooksTheme]}>
-  <Step subtitle="what if we didn't have to write a class when we want to use state?">
+  <Step subtitle="wat als we geen class zouden hoeven schrijven wanneer we een state willen gebruiken?">
     <GreetingLoader theme={hooksTheme} />
     <Code
       code={require("!!raw-loader!./src/greeting.1.1.js").default}
       lang="jsx"
     />
   </Step>
-  <Step subtitle="we want to render an input with the name as the value">
+  <Step subtitle="we willen een input renderen met de naam zoals de value">
     <GreetingLoader theme={hooksTheme} />
     <Code
       code={require("!!raw-loader!./src/greeting.hooks.1.1.js").default}
@@ -84,7 +86,7 @@ But let's take a step back
       lang="jsx"
     />
   </Step>
-  <Step subtitle="we don't know where to get name from, we'll fill it in later">
+  <Step subtitle="we weten niet waar we de naam vandaan moeten halen, we vullen het later in.">
     <GreetingLoader theme={hooksTheme} />
     <Code
       code={require("!!raw-loader!./src/greeting.hooks.1.1.js").default}
@@ -92,7 +94,7 @@ But let's take a step back
       lang="jsx"
     />
   </Step>
-  <Step subtitle="we also need a way to update the name when the input changes">
+  <Step subtitle="we hebben ook een manier nodig om de name te updaten wanneer de input veranderd">
     <GreetingLoader theme={hooksTheme} />
     <Code
       code={require("!!raw-loader!./src/greeting.hooks.1.2.js").default}
@@ -100,7 +102,7 @@ But let's take a step back
       lang="jsx"
     />
   </Step>
-  <Step subtitle="name and setName are closely related, let's put them together">
+  <Step subtitle="name en setName lijken op elkaar, laten we ze samen voegen.">
     <GreetingLoader theme={hooksTheme} />
     <Code
       code={require("!!raw-loader!./src/greeting.hooks.1.2.js").default}
@@ -108,14 +110,14 @@ But let's take a step back
       lang="jsx"
     />
   </Step>
-  <Step subtitle="where do we get name and setName from?">
+  <Step subtitle="waar kunnen we de name en setName verkrijgen?">
     <GreetingLoader theme={hooksTheme} />
     <Code
       code={require("!!raw-loader!./src/greeting.hooks.1.3.js").default}
       lang="jsx"
     />
   </Step>
-  <Step subtitle="what if we could just **use** state from React?">
+  <Step subtitle="wat als we gewoon de state van React **use**?">
     <GreetingLoader version="hooks.1.4" theme={hooksTheme} />
     <Code
       code={require("!!raw-loader!./src/greeting.hooks.1.4.js").default}
@@ -132,29 +134,29 @@ But let's take a step back
     <Code
       code={require("!!raw-loader!./src/greeting.class.1.3.js").default}
       lang="jsx"
-      title="Before Hooks"
-      subtitle="A class component with state"
+      title="Voor Hooks"
+      subtitle="Een class component met state"
     />
     <Code
       code={require("!!raw-loader!./src/greeting.hooks.1.4.js").default}
       lang="jsx"
-      title="After Hooks"
-      subtitle="A function component with state"
+      title="Na Hooks"
+      subtitle="Een function component met state"
     />
   </Step>
   <Step>
     <Code
       code={require("!!raw-loader!./src/greeting.class.1.3.js").default}
       lang="jsx"
-      title="Before Hooks"
-      subtitle="state has to be an object"
+      title="Voor Hooks"
+      subtitle="state moet een object zijn"
       focus="7:9"
     />
     <Code
       code={require("!!raw-loader!./src/greeting.hooks.1.4.js").default}
       lang="jsx"
-      title="After Hooks"
-      subtitle="state could be anything"
+      title="Na Hooks"
+      subtitle="state zou alles kunnen zijn"
       focus="5"
     />
   </Step>
@@ -162,30 +164,30 @@ But let's take a step back
     <Code
       code={require("!!raw-loader!./src/greeting.class.1.3.js").default}
       lang="jsx"
-      title="Before Hooks"
-      subtitle="we read and update the state using this.state and this.setState"
+      title="Voor Hooks"
+      subtitle="we lezen en updaten de state met this.state en this.setState."
       focus="7:12,16,24"
     />
     <Code
       code={require("!!raw-loader!./src/greeting.hooks.1.4.js").default}
       lang="jsx"
-      title="After Hooks"
-      subtitle="the state and the setter are just variables in the function"
+      title="Na Hooks"
+      subtitle="de state en de setter zijn alleen variabelen in de function."
       focus="5,8,14[16:27]"
     />
   </Step>
-  <Step subtitle="What is useState exactly? useState is a hook, a function provided by React that lets you hook into React features from your function components">
+  <Step subtitle="Wat is useState precies? useState is een hook, een function vanuit React die je in de React features laat inhaken vanuit je function components.">
     <Code
       code={require("!!raw-loader!./src/greeting.class.1.3.js").default}
       lang="jsx"
-      title="Before Hooks"
+      title="Voor Hooks"
       focus="1[100],31[100]"
     />
     <Code
       code={require("!!raw-loader!./src/greeting.hooks.1.4.js").default}
       lang="jsx"
-      title="After Hooks"
-      subtitle="just one line"
+      title="Na Hooks"
+      subtitle="maar 1 regel"
       focus="1[1:7,15:40],5"
     />
   </Step>
@@ -194,14 +196,14 @@ But let's take a step back
 ---
 
 <CodeSurferColumnLayout sizes={[1, 2]}>
-  <Step subtitle="Now we want to add a second field for the surname">
+  <Step subtitle="Nu willen we een tweede field toevoegen voor de surname">
     <GreetingLoader version="class.1.3" />
     <Code
       code={require("!!raw-loader!./src/greeting.class.1.3.js").default}
       lang="jsx"
     />
   </Step>
-  <Step subtitle="so we add another key to the state and copy all the boilerplate">
+  <Step subtitle="dus we voegen nog een key toe aan de state en kopieren alle boilerplate">
     <GreetingLoader version="class.2.1" />
     <Code
       code={require("!!raw-loader!./src/greeting.class.2.1.js").default}
@@ -213,14 +215,14 @@ But let's take a step back
 ---
 
 <CodeSurferColumnLayout sizes={[1, 2]} themes={[null, hooksTheme]}>
-  <Step subtitle="Let's do the same with hooks">
+  <Step subtitle="laten we hetzelfde doen met hooks">
     <GreetingLoader version="hooks.1.4" theme={hooksTheme} />
     <Code
       code={require("!!raw-loader!./src/greeting.hooks.1.4.js").default}
       lang="jsx"
     />
   </Step>
-  <Step subtitle="we just declare a second state for surname and render it">
+  <Step subtitle="we verklaren gewoon een tweede state voor surname en renderen het">
     <GreetingLoader version="hooks.2.1" theme={hooksTheme} />
     <Code
       code={require("!!raw-loader!./src/greeting.hooks.2.1.js").default}
@@ -232,21 +234,21 @@ But let's take a step back
 ---
 
 <CodeSurferColumnLayout sizes={[1, 2]}>
-  <Step subtitle="Let's read stuff from context">
+  <Step subtitle="Laten we dingen lezen van context">
     <GreetingLoader version="class.2.1" />
     <Code
       code={require("!!raw-loader!./src/greeting.class.2.1.js").default}
       lang="jsx"
     />
   </Step>
-  <Step subtitle="first we import the context from another file">
+  <Step subtitle="allereerst importen we de context van een andere file">
     <GreetingLoader version="class.3.1" />
     <Code
       code={require("!!raw-loader!./src/greeting.class.3.1.js").default}
       lang="jsx"
     />
   </Step>
-  <Step subtitle="we get the theme using the context render prop API">
+  <Step subtitle="we krijgen het theme door het gebruiken van de context render prop API">
     <GreetingLoader version="class.3.2" />
     <Code
       code={require("!!raw-loader!./src/greeting.class.3.2.js").default}
@@ -254,7 +256,7 @@ But let's take a step back
       focus="30,31,32[20:37],46,47"
     />
   </Step>
-  <Step subtitle="and do the same with the locale">
+  <Step subtitle="en hetzelfde doen met de locale">
     <GreetingLoader version="class.3.3" />
     <Code
       code={require("!!raw-loader!./src/greeting.class.3.3.js").default}
@@ -266,14 +268,14 @@ But let's take a step back
 ---
 
 <CodeSurferColumnLayout sizes={[1, 2]} themes={[null, hooksTheme]}>
-  <Step subtitle="How could we do the same with hooks?">
+  <Step subtitle="Hoe kunnen we hetzelfde doen met hooks?">
     <GreetingLoader version="hooks.2.1" theme={hooksTheme} />
     <Code
       code={require("!!raw-loader!./src/greeting.hooks.2.1.js").default}
       lang="jsx"
     />
   </Step>
-  <Step subtitle="we import useContext from React">
+  <Step subtitle="we importen useContext van React">
     <GreetingLoader version="hooks.3.1" theme={hooksTheme} />
     <Code
       code={require("!!raw-loader!./src/greeting.hooks.3.1.js").default}
@@ -281,7 +283,7 @@ But let's take a step back
       focus="1[27:37,40:52],3"
     />
   </Step>
-  <Step subtitle="we can get the theme (and subscribe to updates) by just using the hook">
+  <Step subtitle="we kunnen de theme (en subscribe to updates) krijgen door alleen de hook te gebruiken">
     <GreetingLoader version="hooks.3.2" theme={hooksTheme} />
     <Code
       code={require("!!raw-loader!./src/greeting.hooks.3.2.js").default}
@@ -301,17 +303,17 @@ But let's take a step back
 ---
 
 <CodeSurferColumnLayout themes={[null, hooksTheme]}>
-  <Step subtitle="with the context hook we get rid of the render prop wrapper">
+  <Step subtitle="met de context hook komen we van de render prop wrapper af">
     <Code
       code={require("!!raw-loader!./src/greeting.class.3.3.js").default}
       lang="jsx"
-      title="Before Hooks"
+      title="Voor Hooks"
       focus="30,31,45,46,48,49,51,52"
     />
     <Code
       code={require("!!raw-loader!./src/greeting.hooks.3.3.js").default}
       lang="jsx"
-      title="After Hooks"
+      title="Na Hooks"
       focus="8,9"
     />
   </Step>
@@ -320,14 +322,14 @@ But let's take a step back
 ---
 
 <CodeSurferColumnLayout sizes={[1, 2]}>
-  <Step subtitle="Let's now update the document title using lifecycle methods">
+  <Step subtitle="Laten we nu het document title updaten door lifecycle methods te gebruiken">
     <GreetingLoader version="class.3.3" />
     <Code
       code={require("!!raw-loader!./src/greeting.class.3.3.js").default}
       lang="jsx"
     />
   </Step>
-  <Step subtitle="we do it by implementing componentDidMount and componentDidUpdate">
+  <Step subtitle="we doen het door componentDidMount en componentDidUpdate te implementeren">
     <GreetingLoader version="class.4.1" />
     <Code
       code={require("!!raw-loader!./src/greeting.class.4.1.js").default}
@@ -339,14 +341,14 @@ But let's take a step back
 ---
 
 <CodeSurferColumnLayout sizes={[1, 2]} themes={[null, hooksTheme]}>
-  <Step subtitle="How do we do this with hooks?">
+  <Step subtitle="Hoe doen we dit met hooks?">
     <GreetingLoader version="hooks.3.3" theme={hooksTheme} />
     <Code
       code={require("!!raw-loader!./src/greeting.hooks.3.3.js").default}
       lang="jsx"
     />
   </Step>
-  <Step subtitle="we have the useEffect hook">
+  <Step subtitle="we hebben de useEffect hook">
     <GreetingLoader version="hooks.4.1" theme={hooksTheme} />
     <Code
       code={require("!!raw-loader!./src/greeting.hooks.4.1.js").default}
@@ -354,7 +356,7 @@ But let's take a step back
       focus="1,4,5"
     />
   </Step>
-  <Step subtitle="we pass a function that will run after every update and after the initial render">
+  <Step subtitle="we passeren een function dat zal draaien na elke update en na de eerste render">
     <GreetingLoader version="hooks.4.2" theme={hooksTheme} />
     <Code
       code={require("!!raw-loader!./src/greeting.hooks.4.2.js").default}
@@ -370,14 +372,14 @@ But let's take a step back
     <Code
       code={require("!!raw-loader!./src/greeting.class.4.1.js").default}
       lang="jsx"
-      title="Before Hooks"
+      title="Voor Hooks"
       focus="20:28"
-      subtitle="We have different lifecycle methods for mount and update"
+      subtitle="We hebben een andere lifecylcle methode voor mount en update"
     />
     <Code
       code={require("!!raw-loader!./src/greeting.hooks.4.2.js").default}
       lang="jsx"
-      title="After Hooks"
+      title="Na Hooks"
       focus="15:17"
     />
   </Step>
@@ -385,16 +387,16 @@ But let's take a step back
     <Code
       code={require("!!raw-loader!./src/greeting.class.4.1.js").default}
       lang="jsx"
-      title="Before Hooks"
+      title="Voor Hooks"
       focus="20:28"
-      subtitle="we use this.state to access state"
+      subtitle="we gebruiken this.state om toegang te krijgen tot state"
     />
     <Code
       code={require("!!raw-loader!./src/greeting.hooks.4.2.js").default}
       lang="jsx"
-      title="After Hooks"
+      title="Na Hooks"
       focus="15:17"
-      subtitle="the effect is inside the function component so we can use the variables from the function scope"
+      subtitle="het effect is binnen de function component zodat we de variabelen van de function scope kunnen gebruiken"
     />
   </Step>
 </CodeSurferColumnLayout>
@@ -402,35 +404,35 @@ But let's take a step back
 ---
 
 <CodeSurferColumnLayout sizes={[1, 2]}>
-  <Step subtitle="Now we want to subscribe to the windows resize event">
+  <Step subtitle="We willen nu inschrijven in het windows resize evenement">
     <GreetingLoader version="class.4.1" />
     <Code
       code={require("!!raw-loader!./src/greeting.class.4.1.js").default}
       lang="jsx"
     />
   </Step>
-  <Step subtitle="we add the window width to the state">
+  <Step subtitle="we voegen de window width toe aan de state">
     <GreetingLoader version="class.5.1" />
     <Code
       code={require("!!raw-loader!./src/greeting.class.5.1.js").default}
       lang="jsx"
     />
   </Step>
-  <Step subtitle="add a row to render it">
+  <Step subtitle="voeg een row toe om het te renderen">
     <GreetingLoader version="class.5.2" />
     <Code
       code={require("!!raw-loader!./src/greeting.class.5.2.js").default}
       lang="jsx"
     />
   </Step>
-  <Step subtitle="add a listener when the component mounts">
+  <Step subtitle="voeg een listener toe wanneer het component mounts">
     <GreetingLoader version="class.5.3" />
     <Code
       code={require("!!raw-loader!./src/greeting.class.5.3.js").default}
       lang="jsx"
     />
   </Step>
-  <Step subtitle="and remove the listener before the component unmounts">
+  <Step subtitle="en verwijder de listener voordat de component unmounts">
     <GreetingLoader version="class.5.4" />
     <Code
       code={require("!!raw-loader!./src/greeting.class.5.4.js").default}
@@ -442,28 +444,28 @@ But let's take a step back
 ---
 
 <CodeSurferColumnLayout sizes={[1, 2]} themes={[null, hooksTheme]}>
-  <Step subtitle="Let's do the same with hooks">
+  <Step subtitle="Laten we hetzelfde doen met hooks">
     <GreetingLoader version="hooks.4.2" theme={hooksTheme} />
     <Code
       code={require("!!raw-loader!./src/greeting.hooks.4.2.js").default}
       lang="jsx"
     />
   </Step>
-  <Step subtitle="first we use a new state for the width">
+  <Step subtitle="eerst gebruiken we een nieuwe state voor de width">
     <GreetingLoader version="hooks.5.1" theme={hooksTheme} />
     <Code
       code={require("!!raw-loader!./src/greeting.hooks.5.1.js").default}
       lang="jsx"
     />
   </Step>
-  <Step subtitle="then we use a second effect for handling the resize">
+  <Step subtitle="dan gebruiken we een tweede effect om de resize te behandelen">
     <GreetingLoader version="hooks.5.2" theme={hooksTheme} />
     <Code
       code={require("!!raw-loader!./src/greeting.hooks.5.2.js").default}
       lang="jsx"
     />
   </Step>
-  <Step subtitle="we can specify a clean up function, in the same effect, by returning it">
+  <Step subtitle="we kunnen een clean up function specificeren, met hetzelfde effect, door het terug te brengen">
     <GreetingLoader version="hooks.5.3" theme={hooksTheme} />
     <Code
       code={require("!!raw-loader!./src/greeting.hooks.5.3.js").default}
@@ -480,28 +482,28 @@ But let's take a step back
     <Code
       code={require("!!raw-loader!./src/greeting.class.5.4.js").default}
       lang="jsx"
-      title="Before Hooks"
+      title="Voor Hooks"
       focus="22:35"
-      subtitle="the logic for the different effects is mixed and splitted apart in different methods"
+      subtitle="de logica van het verschillende effect is gemixt en gesplit op andere manieren"
     />
     <Code
       code={require("!!raw-loader!./src/greeting.hooks.5.3.js").default}
       lang="jsx"
-      title="After Hooks"
+      title="Na Hooks"
       focus="15:17,20:26"
-      subtitle="the code is separated based on what is doing instead of when it runs"
+      subtitle="de code is uit elkaar gehaald gebaseerd op what is doing in plaats van when it runs"
     />
   </Step>
 </CodeSurferColumnLayout>
 
 ---
 
-<Image src="./onemorething.jpg" />
+...One more thing...
 
 ---
 
 <CodeSurferColumnLayout sizes={[1, 2]} themes={[null, hooksTheme]}>
-  <Step subtitle="this function is getting pretty large">
+  <Step subtitle="deze function is best groot">
     <GreetingLoader version="hooks.5.3" theme={hooksTheme} />
     <Code
       code={require("!!raw-loader!./src/greeting.hooks.5.3.js").default}
@@ -509,7 +511,7 @@ But let's take a step back
       focus="1:51"
     />
   </Step>
-  <Step subtitle="hook calls are just function calls">
+  <Step subtitle="hook calls zijn alleen function calls">
     <GreetingLoader version="hooks.5.3" theme={hooksTheme} />
     <Code
       code={require("!!raw-loader!./src/greeting.hooks.5.3.js").default}
@@ -517,7 +519,7 @@ But let's take a step back
       focus="19:26"
     />
   </Step>
-  <Step subtitle="so we can extract them">
+  <Step subtitle="dus we kunnen ze extracten">
     <GreetingLoader version="hooks.6.1" theme={hooksTheme} />
     <Code
       code={require("!!raw-loader!./src/greeting.hooks.6.1.js").default}
@@ -531,7 +533,7 @@ But let's take a step back
       lang="jsx"
     />
   </Step>
-  <Step subtitle="we can also reduce duplication">
+  <Step subtitle="we kunnen ook duplicatie verminderen">
     <GreetingLoader version="hooks.6.2" theme={hooksTheme} />
     <Code
       code={require("!!raw-loader!./src/greeting.hooks.6.2.js").default}
